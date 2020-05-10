@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Stardust's Blog
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Stardust" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Stardust</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/StardustLu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/image/LDA/LDA.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >LDA分析</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="LDA分析"><a href="#LDA分析" class="headerlink" title="LDA分析"></a>LDA分析</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>$Fisher$是一种特征降维的处理方法。其核心思想是：通过线性映射将特征向量从高维空间映射到低维空间，使特征向量间的差异变大：即同类别的样本尽可能近，不同类别的样本尽可能远。</p>
+<h2 id="二类LDA"><a href="#二类LDA" class="headerlink" title="二类LDA"></a>二类LDA</h2><p><img src="/image/LDA/originvecspace.PNG" alt="原空间"></p>
+<p>$Fisher$是一种对于特征的一种处理方法。其核心思想是：通过线性映射将特征向量间的差异变大，即同类别的样本尽可能近，不同类别的样本尽可能远。<br>针对图像，即将以各波段为基向量的波段向量空间转换到各类差别最大的特征向量空间。</p>
+<p><img src="/image/LDA/aftervecspace.PNG" alt="变化后空间"></p>
+<p>为了达到这一目标，我们构造出描述Fisher准则的函数</p>
+<script type="math/tex; mode=display">J=\frac{|\widetilde{\mu_1}-\widetilde{\mu_2}|^2}{\widetilde{S_1}^2+\widetilde{S_2^2}}</script><p>其中 </p>
+<script type="math/tex; mode=display">{\mu_i}=\frac{1}{N_i}\sum_{x\in\omega_i}{x}</script><script type="math/tex; mode=display">\widetilde{\mu_i}=\frac{1}{N_i} \sum_{y \in \omega_i}y= \frac{1}{N_i} \sum_{x \in \omega_i} w^Tx=w^T \mu_i</script><script type="math/tex; mode=display">S_i=\sum_{x \in\omega_i}(x-\mu_i)(x-\mu_i)^T</script><script type="math/tex; mode=display">\widetilde{S_i}^2=\sum_{y \in \omega_i}(y-\widetilde{\mu_i})^2=\sum_{x \in \omega_i}(w^Tx-w^T\mu_i)^2=\sum_{x\in\omega_i}w^T(x-\mu_i)(x-\mu_i)^Tw=w^T S_i w</script><p>分子描述的是两类别的均值向量的范数，其实际含义是两个样本中心点的欧氏距离；分母为两类别的散度矩阵，即各特征维度之间的协方差阵，具体应用再图像上是波段间的协方差阵。根据$Fisher$的思想，其希望<br>同类别的样本尽可能接近，不同类别的样本尽可能的远离，那么反映在判别函数上即分子尽可能的大，分母尽可能的小，即整个分式最大。将上述式带入</p>
+<script type="math/tex; mode=display">(\widetilde{\mu_1}-\widetilde{\mu_2})^2=(w^T\mu_1-w^T\mu_2)^2=w^T(\mu_1-\mu_2)(\mu_1-\mu_2)^Tw=w^TS_Bw</script><script type="math/tex; mode=display">\widetilde{S_1}^2+\widetilde{S_2}^2=w^T(S_1+S_2)w</script><p>则原判别式可化为 </p>
+<script type="math/tex; mode=display">J(w)=\frac{w^TS_Bw}{w^TS_Ww}</script><p>欲使变换后的$Fisher$判别式最大，则对目标函数关于$w$求导</p>
+<script type="math/tex; mode=display">\frac{d}{dw}[J(w)]=\frac{d}{dw}[\frac{w^TS_Bw}{w^TS_Ww}]=0</script><script type="math/tex; mode=display">[w^TS_Ww]\frac{d[w^TS_Bw]}{dw}-[w^TS_Bw]\frac{d[w^TS_Ww]}{dw}=0</script><script type="math/tex; mode=display">[w^TS_Ww]2S_Bw-[w^TS_Bw]2S_Ww=0</script><script type="math/tex; mode=display">[\frac{w^TS_Ww}{w^TS_Ww}]S_Bw-[\frac{w^TS_Bw}{w^TS_Ww}]S_Ww=0</script><script type="math/tex; mode=display">S_Bw-J S_Ww=0</script><script type="math/tex; mode=display">S_W^{-1}S_Bw=Jw</script><p>即转换为求$S_W^-1S_B$的特征值和特征向量的问题。而针对二类问题，其可进一步化简。</p>
+<script type="math/tex; mode=display">S_B{w}=(\mu_1-\mu_2)(\mu_1-\mu_2)^Tw=(\mu_1-\mu_2)R</script><script type="math/tex; mode=display">R=(\mu_1-\mu_2)^Tw</script><script type="math/tex; mode=display">Jw=S_W^{-1}(S_Bw)=S_W^{-1}(\mu_1-\mu_2)R</script><script type="math/tex; mode=display">w=\frac{R}{J}S_W^{-1}(\mu_1-\mu_2)</script><p>由推导结果可知，程序只需要根据训练样本计算出变换向量$w$即可。根据公式</p>
+<script type="math/tex; mode=display">w=\frac{R}{J}S_W^{-1}(\mu_1-\mu_2)</script><p>只需要计算两类样本的均值向量$\mu_1$和$\mu_2$以及$S_W^{-1}$即可。其中$\frac{R}{J}$为数值，其只影响变换向量的模，并不影响变换向量的方向。而在该线性变换（线性映射）中<br>我们只关注变换向量的方向，并不关心变换向量的模。其中：</p>
+<script type="math/tex; mode=display">\mu_i=\frac{1}{N_i}\sum_{x\in\omega_i}x</script><script type="math/tex; mode=display">S_W=\sum_{i=1}^n\sum_{x\in\omega_i}(x-\mu_i)(x-\mu_i)^T</script><p>变换向量计算完成后，将样本全部映射到新的特征空间中，再确定两类的阈值。由于本类为二类分类，三维的点通过变换向量被映射到一条直线上。确定阈值的方法有多种，如计算变换后样本均值</p>
+<script type="math/tex; mode=display">x_{threshold}=\frac{\widetilde{\mu_1}+\widetilde{\mu_2}}{2}</script><h2 id="多类LDA"><a href="#多类LDA" class="headerlink" title="多类LDA"></a>多类LDA</h2><p>$Fisher$的核心思想在于，通过线性映射，将原波段特征空间中的样本点映射到新的特征空间中的样本点，并使其异类间隔最大，同类散度最小。<br>针对多类的情况，其与二类有所不同。在二类中，$Fisher$判别的本质在于通过一个变换向量将样本空间中的点投影到一维上，并使在一维线上两类差别最大。但针对多类问题，一维并不够用，因此我们需要一个投影矩阵$W$，将其从高维空间投影到低维空间上。<br>针对多类LDA，类内散度矩阵并不发生改变，仍然是样本各特征维度的协方差矩阵。</p>
+<script type="math/tex; mode=display">S_{\omega_i}=\sum_{x\in\omega_i}(x-\mu_i)(x-\mu_i)^T</script><script type="math/tex; mode=display">S_{\omega}=\sum_{i=1}^c S_{\omega_i}</script><p>而类间散度矩阵$S_B$则发生了一些变换</p>
+<script type="math/tex; mode=display">S_B=\sum_{i=1}^c N_i (\mu_i-\mu) (\mu_i-\mu)^T</script><p>其中$\mu$是全样本中心，$\mu_i$为第$i$类样本中心，$c$为类别数，即：</p>
+<script type="math/tex; mode=display">\mu_i=\frac{1}{N_i} \sum_{x \in \omega_i}x</script><script type="math/tex; mode=display">\mu_i=\frac{\sum_{i=1}^c N_i \mu_i}{\sum_{i=1}^c N_i}</script><p>那么，$Fisher$判别函数变化为：</p>
+<script type="math/tex; mode=display">J=\frac{W^T S_W W}{W^T S_B W}</script><p>对其关于$W$求导可得</p>
+<script type="math/tex; mode=display">S_W^{-1}S_BW=JW</script><p>因此只需要求解$S_W^{-1}S_B$的特征向量特征值即可。需要注意的是，由于$S_B$中$(\mu_i-\mu)^T$的秩为1，因此$S_B$的秩至多为$C$。同时任意一个$\mu_i$都可以通过其余$c-1$个$\mu_i$推导得到<br>因此$\mu_1,\mu_2\dots,\mu_c$是线性相关的，且其秩为$c-1$。故$S_W^{-1}S_B$的特征值和特征向量应该只有$c-1$个。投影矩阵为特征值不为$0$的$c-1$个特征向量组合而成。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " target="_blank" rel="noopener" style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

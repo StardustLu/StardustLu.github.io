@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Stardust's Blog
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Stardust" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Stardust</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/StardustLu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/image/SVM/svm.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >支撑向量机</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="支撑向量机"><a href="#支撑向量机" class="headerlink" title="支撑向量机"></a>支撑向量机</h1><h2 id="SVM种类"><a href="#SVM种类" class="headerlink" title="SVM种类"></a>SVM种类</h2><p>支撑向量机包括线性可分支撑向量机，线性支撑向量机和非线性支撑向量机。</p>
+<h2 id="样本"><a href="#样本" class="headerlink" title="样本"></a>样本</h2><p>对于待分类的样本向量，构造$(X_i,y_i)$进行支撑向量机的训练。其中$X_i$为样本向量，$y_i$为样本标签且$y_i\in(-1,1)$</p>
+<h2 id="硬间隔最大化"><a href="#硬间隔最大化" class="headerlink" title="硬间隔最大化"></a>硬间隔最大化</h2><p><img src="/image/SVM/SVMmargin.png" alt="硬间隔"></p>
+<p>一个超平面可将空间分成两个部分，该超平面的方程可表示为$X^TW+b=0$。将超平面的一侧规定为正类$(y_i=1)$，另一侧规定为负类$(y_i=-1)$。欲使分类效果更好，通过沿法向量方向平移形成间隔。<br>由于间隔越大，该超平面的分类就越合理，因此我们需要求得最大间隔时超平面的方程以分类。对两条平行线间距离对高维空间进行推广：</p>
+<script type="math/tex; mode=display">margin=\rho=\frac{2}{||W||}</script><p>欲求极值，我们通常采用求导的方法。对于处于分母的变量，其求导结果复杂，因此通过适当的变换，将其转化为一个易于处理的问题。</p>
+<script type="math/tex; mode=display">max  \frac{2}{||W||}\Leftrightarrow min  \frac{1}{2}{||W||}^2</script><p>其中$\frac{1}{2}$只是为了计算方便。但同时，其还有样本的约束条件。故该优化问题完整的表述，应该为</p>
+<script type="math/tex; mode=display">min  J(W)=min  \frac{1}{2}||W||^2</script><script type="math/tex; mode=display">s.t. y_i({X_i^TW}+b) \ge 1</script><p>条件中，通过将$y_i$与判别超平面方程相乘使结果始终大于等于1。同时，从图中可以看出，只有处在间隔平面上的向量才对优化问题产生影响，因此这些向量被称为支撑向量$(support vector)$。\<br>求解上述优化问题，我们引入$Lagrange$函数(条件优化问题的通常解法，高数中为我们学习过带有等式条件的条件极值问题，这里是带有不等式的条件极值问题，解决的方法是相似的)</p>
+<script type="math/tex; mode=display">L(W,b,\alpha)=\frac{1}{2}||W||-\sum_{i=1}^n \alpha_i[y_i(X_i^TW+b-1]</script><p>对于任意$W,b$,若$Lagrange$函数不满足约束条件，则$maxL(W,b,\alpha)=+\infty$\<br>否则，$max \ L(W,b,\alpha)=\frac{1}{2}{||W||}^2$<br>而根据$Lagrange$函数的对偶性(此处对偶问题的等价性需要证明，此处略过)</p>
+<script type="math/tex; mode=display">{min}_{W,b} {max}_{\alpha} L(W,b,\alpha) \leftrightarrow {max}_{\alpha}{min}_{W,b} L(W,b,\alpha)</script><p>由此构造出原问题的对偶问题。针对对偶问题，首先求解${min}_{W,b}L(W,b,\alpha)$,对$W,b$ 分别求导，并令结果等于0</p>
+<script type="math/tex; mode=display">\bigtriangledown_{W}L(W,b,\alpha) = W-\sum_{i=1}^n \alpha_iy_iX_i=0 \rightarrow W=\sum_{i=1}^n \alpha_iy_iX_i</script><script type="math/tex; mode=display">\bigtriangledown_{b}L(W,b,\alpha) = \sum_{i=1}^n \alpha_i y_i=0</script><p>将结果回代进 $L(W,b,\alpha)$得：</p>
+<script type="math/tex; mode=display">L(W,b,\alpha)= - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i\alpha_j y_iy_j(x_i \cdot x_j)+\sum_{i=1}^N \alpha_i</script><p>之后，求 $min \ L(W,b,\alpha)$对$\alpha$的极大。原问题即转化为</p>
+<script type="math/tex; mode=display">{max}_{\alpha} - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i\alpha_j y_iy_j(x_i \cdot x_j)+\sum_{i=1}^N \alpha_i</script><script type="math/tex; mode=display">s.t.\ \sum_{i=1}^n \alpha_i y_i=0</script><script type="math/tex; mode=display">\alpha_i \ge 0,\ i=1,2,\dots,N</script><p>由此即将原问题转化为一个等价的优化问题。针对该问题的求解，会在后面讲述。</p>
+<h2 id="软间隔最大化"><a href="#软间隔最大化" class="headerlink" title="软间隔最大化"></a>软间隔最大化</h2><p><img src="/image/SVM/SVMsoftmargin.png" alt="软间隔"></p>
+<p>对于上述的硬间隔最大，在实际操作中会存在很多问题：比如噪声成为支撑向量影响了间隔最大化，甚至导致无法构间隔。为了解决这个问题，对样本引入一个松弛变量，则原条件变化为：</p>
+<script type="math/tex; mode=display">y_i(X_i^TW+b) \ge 1-\xi_i</script><p>则目标函数变为</p>
+<script type="math/tex; mode=display">min  \frac{1}{2}{||W||}^2+C \sum_{i=1}^N \xi_i</script><p>其中$C&gt;0$为惩罚参数，而该问题的$Lagrange$函数则变为：</p>
+<script type="math/tex; mode=display">L(W,b,\alpha,\xi,\mu)=\frac{1}{2}||W||-\sum_{i=1}^n \alpha_i[y_i(X_i^TW+b)-1+\xi_i] +C \sum_{i=1}^N \xi_i - \sum_{i=1}^N \mu_i\xi_i</script><p>其中，$\alpha_i \ge 0, \mu \ge 0$。求解其对偶问题，先分别求$L(W,b,\alpha,\xi,\mu)$对$W,b,\xi_i$的极小</p>
+<script type="math/tex; mode=display">\bigtriangledown_{W}L(W,b,\alpha,\xi,\mu) = W-\sum_{i=1}^n \alpha_iy_iX_i=0 \rightarrow W=\sum_{i=1}^n \alpha_iy_iX_i</script><script type="math/tex; mode=display">\bigtriangledown_{b}L(W,b,\alpha,\xi,\mu) = \sum_{i=1}^n \alpha_i y_i=0</script><script type="math/tex; mode=display">\bigtriangledown_{\xi_i} = C-\alpha_i-\mu_i =0</script><p>将上式代入$Lagrange$函数：</p>
+<script type="math/tex; mode=display">L(W,b,\alpha,\xi,\mu)= - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i\alpha_j y_iy_j(x_i \cdot x_j)+\sum_{i=1}^N \alpha_i</script><p>在对${min}_{W,b,\xi_i} \ L(W,b,\alpha,\xi,\mu)$对$\alpha$的极大，原问题的对偶问题即为：</p>
+<script type="math/tex; mode=display">{max}_{\alpha} - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i\alpha_j y_iy_j(x_i \cdot x_j)+\sum_{i=1}^N \alpha_i</script><script type="math/tex; mode=display">s.t. \sum_{i=1}^n \alpha_i y_i=0</script><script type="math/tex; mode=display">C-\alpha_i-\mu_i =0</script><script type="math/tex; mode=display">\alpha_i \ge 0,\mu_i \ge 0  i=1,2,\dots,N</script><p>其中，后三个式子可化简为</p>
+<script type="math/tex; mode=display">0 \le \alpha_i \le C</script><p>由此可见，软间隔的优化问题与硬间隔优化几乎没有差异。唯一的差异在于$\alpha_i$存在上界，即硬间隔$\alpha$的取值范围为$[0,+\infty)$,而软间隔的取值范围为$[0,C]$。</p>
+<h2 id="核技巧"><a href="#核技巧" class="headerlink" title="核技巧"></a>核技巧</h2><p><img src="/image/SVM/SVMkernel.png" alt="核技巧"></p>
+<p>对于某些样本，其在原特征空间中的无法通过线性分类器进行分类。而通过核函数，将原特征空间中的样本点映射到高维希尔伯特空间，而这些样本点在样本点在高维希尔伯特空间是线性可分的。<br>通过核函数的映射，将线性不可分的问题转换为线性可分的问题。<br>而$SVM$可以非常方便的将原样本空间中的点映射到高维希尔伯特空间。只需将原优化问题中的内积$x_i\ cdot x_j$由核函数$K(x_i,x_j)$代替即可。<br>原优化问题即变化为：</p>
+<script type="math/tex; mode=display">{max}_{\alpha}  - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i\alpha_j y_iy_jK(x_i,x_j)+\sum_{i=1}^N \alpha_i</script><script type="math/tex; mode=display">s.t.\sum_{i=1}^n \alpha_i y_i=0</script><script type="math/tex; mode=display">0 \le \alpha_i \le C</script><p>核技巧最巧妙的地方即在此：将低维样本点映射到高维空间，其时间复杂度随维度的增长而增长。但核技巧，其变换过程本质上是做内积运算，其时间复杂度的增长是极小的。<br>核技巧通过较小的代价即实现了升维，从而解决线性不可分问题，极为巧妙。<br>常用的核函数有：<br>线性核函数$(Linear)$:</p>
+<script type="math/tex; mode=display">K(x_i,x_j)=x_i  \cdot  x_j</script><p>多项式核函数$(Polynomial)$: $d$为参数</p>
+<script type="math/tex; mode=display">K(x_i,x_j)=(x_i \cdot x_j+1)^d</script><p>高斯核函数$(RBF)$:$\gamma$为参数</p>
+<script type="math/tex; mode=display">K(x_i,x_j)=e^{-\gamma {||x_i-x_j||}^2}</script><h2 id="SMO-算法"><a href="#SMO-算法" class="headerlink" title="$SMO$算法"></a>$SMO$算法</h2><p>优化问题：</p>
+<script type="math/tex; mode=display">{max}_{\alpha} \ - \frac{1}{2} \sum_{i=1}^N \sum_{j=1}^N \alpha_i\alpha_j y_iy_jK(x_i,x_j)+\sum_{i=1}^N \alpha_i</script><script type="math/tex; mode=display">s.t.\ \sum_{i=1}^n \alpha_i y_i=0</script><script type="math/tex; mode=display">0 \le \alpha_i \le C</script><p>其实质为一个凸二次优化问题。其中求解效率较高的为$SMO$算法。$SMO$算法是一种启发式算法，其思想是：当所有变量的解都满足约束条件时，那么即得到最优化问题的解。其实质即将多元优化问题分解为<br>多个二次优化问题：即挑选两个变量，固定其他变量，优化挑选的两个变量，完成后再挑选两个变量，以此往复。因此，$SMO$算法可以分解为：两个变量二次规划的解析方法和选择变量的启发式方法。</p>
+<h4 id="二变量二次规划的解析方法"><a href="#二变量二次规划的解析方法" class="headerlink" title="二变量二次规划的解析方法"></a>二变量二次规划的解析方法</h4><p>假设选择两个变量为$\alpha_1,\alpha_2$，其他变量$\alpha_i$固定。则原优化问题变换为：</p>
+<script type="math/tex; mode=display">{min}_{\alpha_1,\alpha_2}  W(\alpha_1,\alpha_2)=\frac{1}{2}K_{11}\alpha_1^2 + \frac{1}{2} K_{22} \alpha_2^2 + y_1y_2k_{12}\alpha_1\alpha_2 -(\alpha_1+\alpha_2)+y_1\alpha_1\sum_{i=3}^N y_i\alpha_iK_{i1} +y_2\alpha_2\sum_{i=3}^N y_i\alpha_iK_{i2}</script><script type="math/tex; mode=display">s.t.  \alpha_1y_1+\alpha_2y_2=-\sum_{i=3}^Ny_i\alpha_i=\varsigma</script><script type="math/tex; mode=display">0 \le \alpha_i \le C</script><p>由于约束条件，针对$\alpha_1,\alpha_2$，有取值范围：</p>
+<script type="math/tex; mode=display">L \le \alpha_2^{new} \le H</script><p><img src="/image/SVM/SVMSMO.png" alt="取值范围"></p>
+<p>当$y_1 \neq y_2$时：</p>
+<script type="math/tex; mode=display">L=max (0,\alpha_2^{old}-\alpha_1^{old}),\ H=min\ (C,C+\alpha_2^{old}+\alpha_1^{old})</script><p>当$y_1=y_2$时</p>
+<script type="math/tex; mode=display">L=max (0,\alpha_2^{old}+\alpha_1^{old}-C),\ H=min\ (C,\alpha_2^{old}+\alpha_1^{old})</script><p>令</p>
+<script type="math/tex; mode=display">E_i=( \sum_{j=1}^N \alpha_j y_j K(x_j,x_i)+b )-y_i  \quad i=1,2</script><script type="math/tex; mode=display">\eta=K_{11}+K_{22}-2K_{12}</script><p>则未经剪裁的$\alpha_2^{new,un}$为：</p>
+<script type="math/tex; mode=display">\alpha_2^{new,un}=\alpha_2^{old}+\frac{y_2(E_1-E_2)}{\eta}</script><p>根据其取值范围，剪裁后 </p>
+<script type="math/tex; mode=display">
+\alpha_2^{new}=
+\begin{cases}                               
+H,\qquad \qquad  \alpha_2^{new,un}>H \\
+\alpha_2^{new,un},\qquad  L \le \alpha_2^{new,un} \le H\\
+L,\qquad \qquad  \alpha_2^{new,un}<L\\
+\end{cases}</script><p>由求得的$\alpha_2^{new}$求得$\alpha_1^{new}$:</p>
+<script type="math/tex; mode=display">\alpha_1^{new} =\alpha_1^{old}+y_1y_2(\alpha_2^{old}-\alpha_2^{new})</script><p>然后，利用求得的<br>$\alpha_1^{new},\alpha_2^{new}$求解$b$： </p>
+<script type="math/tex; mode=display">
+b^{new}=
+\begin{cases}
+-E_1-y_1K_{11}(\alpha_1^{new}-\alpha_1^{old})-y_2K_{21}(\alpha_2^{new}-\alpha_2^{old})+b^{old} \qquad 0<\alpha_1^{new}<C\\
+-E_2-y_1K_{12}(\alpha_1^{new}-\alpha_1^{old})-y_2K_{22}(\alpha_2^{new}-\alpha_2^{old})+b^{old} \qquad 0<\alpha_2^{new}<C\\
+\frac{b_1^{new}+b_2^{new}}{2} \qquad \qquad 0<\alpha_1^{new}<C  \& 0<\alpha_2^{new}<C \\
+\end{cases}</script><h4 id="变量选择的启发式方法"><a href="#变量选择的启发式方法" class="headerlink" title="变量选择的启发式方法"></a>变量选择的启发式方法</h4><p>变量选取方法<br>外循环：遍历所有的$\alpha$，选取一个为$\alpha_1$<br>内循环：计算对于外循环选取的$\alpha_i$，计算其相对于其他所有$\alpha$的$E_j$,选取能使$|E_i-E_j|$最大的$\alpha_j$作为$\alpha_2$。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " target="_blank" rel="noopener" style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

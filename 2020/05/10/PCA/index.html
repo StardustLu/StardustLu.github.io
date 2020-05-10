@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Stardust's Blog
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="Stardust" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.0"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Stardust</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/StardustLu" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/image/PCA/cat.JPG);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >PCA分析</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="PCA分析"><a href="#PCA分析" class="headerlink" title="PCA分析"></a>PCA分析</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p><img src="/image/PCA/cat.JPG" alt="猫猫"><br>这是一只猫猫o(≧v≦)o<br>准确的说，这是一张猫猫的照片233333。照片将原本三维的物体（甚至更高维度，如气味等）变成了一幅二维的影像，但为什么我们还能认出这是一只猫猫呢？<br>原因在于二维照片在这样一个角度保留了充分的有效信息。通过这些信息我们仍然能够认出这是一只猫猫。而如何在低维度尽可能保持多的信息，这就是PCA分析所做的工作。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>PCA分析，全称Principal components analysis，即主成分分析。主成分分析，顾名思义，就是对主要成分的分析_(:з」∠)_<br>PCA是一种特征降维的分析方法，通过向量的基的改变（可以看做坐标轴的旋转），将原空间中的点投影到新的坐标轴上，使新坐标轴上的信息量最大。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>PCA中认为，样本在某一个维度信息量最大，那么它在这一个维度上特征点投影的分布方差最大。PCA分析，就是要寻找到一组正交基，使样本向量在该正交基上的投影方差最大（相较于其他正交基）。选取正交基的原因在于，此时两个投影方向的协方差为零，各投影方向上的信息不存在冗余。<br>举一个简单的栗子 =w= ：<br><img src="/image/PCA/gauss.PNG" alt="PCA"><br>在二维空间中的样本点，沿着原始的坐标轴投影，我们发现它的方差（可以粗略的认为即投影在坐标轴上的宽度）并不是最大的，即认为这个一方向上信息量并不是最大的。<br>而如果沿着绿线投影，此时样本方差应该是最大的，信息量也是最丰富的。因此PCA变换就是需要找到类似绿线这样的向量方向，并将原本的样本点投影到这样的正交基上。</p>
+<h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><p>由此，我们发现了PCA变换后的特征，即变换后的各投影方向的协方差为零，换句话说，即变换后样本的协方差矩阵为对角阵。<br>原协方差阵：</p>
+<script type="math/tex; mode=display">S(X)=\frac{1}{n-1} XX^T</script><p>变换后的协方差阵：</p>
+<script type="math/tex; mode=display">S(Y)=\frac{1}{n-1} YY^T</script><p>而其中</p>
+<script type="math/tex; mode=display">Y=PX</script><p>因此</p>
+<script type="math/tex; mode=display">YY^T=(PX)(PX)^T=PXX^TP^T</script><p>而将$XX^T$进行特征值分解：</p>
+<script type="math/tex; mode=display">XX^T=QDQ^T</script><p>故</p>
+<script type="math/tex; mode=display">(n-1)S(Y)=PXX^TP^T=PQD(PQ)^T</script><p>而由上述特征，PCA变换后的协方差阵是对角阵，而特征值分解之后$D$本身即是对角阵。欲使协方差阵为对角阵，最简单的方法即：</p>
+<script type="math/tex; mode=display">PQ=I</script><p>而由于$Q$为正交阵，故：</p>
+<script type="math/tex; mode=display">P=Q^T</script><p>因此欲求PCA的变换矩阵，只需要对原协方差阵进行矩阵特征值分解即可。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " target="_blank" rel="noopener" style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
