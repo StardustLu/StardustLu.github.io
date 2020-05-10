@@ -133,14 +133,14 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/image/PCA/cat.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/image/LDA/cat.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >PCA分析</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="PCA分析"><a href="#PCA分析" class="headerlink" title="PCA分析"></a>PCA分析</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p><img src="/image/PCA/cat.jpg" alt="猫猫"><br>这是一只猫猫o(≧v≦)o<br>准确的说，这是一张猫猫的照片233333。照片将原本三维的物体（甚至更高维度，如气味等）变成了一幅二维的影像，但为什么我们还能认出这是一只猫猫呢？<br>原因在于二维照片在这样一个角度保留了充分的有效信息。通过这些信息我们仍然能够认出这是一只猫猫。而如何在低维度尽可能保持多的信息，这就是PCA分析所做的工作。</p>
+                <h1 id="PCA分析"><a href="#PCA分析" class="headerlink" title="PCA分析"></a>PCA分析</h1><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p><img src="/image/LDA/cat.jpg" alt="猫猫"><br>这是一只猫猫o(≧v≦)o<br>准确的说，这是一张猫猫的照片233333。照片将原本三维的物体（甚至更高维度，如气味等）变成了一幅二维的影像，但为什么我们还能认出这是一只猫猫呢？<br>原因在于二维照片在这样一个角度保留了充分的有效信息。通过这些信息我们仍然能够认出这是一只猫猫。而如何在低维度尽可能保持多的信息，这就是PCA分析所做的工作。</p>
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>PCA分析，全称Principal components analysis，即主成分分析。主成分分析，顾名思义，就是对主要成分的分析_(:з」∠)_<br>PCA是一种特征降维的分析方法，通过向量的基的改变（可以看做坐标轴的旋转），将原空间中的点投影到新的坐标轴上，使新坐标轴上的信息量最大。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>PCA中认为，样本在某一个维度信息量最大，那么它在这一个维度上特征点投影的分布方差最大。PCA分析，就是要寻找到一组正交基，使样本向量在该正交基上的投影方差最大（相较于其他正交基）。选取正交基的原因在于，此时两个投影方向的协方差为零，各投影方向上的信息不存在冗余。<br>举一个简单的栗子 =w= ：<br><img src="/image/PCA/gauss.png" alt="PCA"><br>在二维空间中的样本点，沿着原始的坐标轴投影，我们发现它的方差（可以粗略的认为即投影在坐标轴上的宽度）并不是最大的，即认为这个一方向上信息量并不是最大的。<br>而如果沿着绿线投影，此时样本方差应该是最大的，信息量也是最丰富的。因此PCA变换就是需要找到类似绿线这样的向量方向，并将原本的样本点投影到这样的正交基上。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>PCA中认为，样本在某一个维度信息量最大，那么它在这一个维度上特征点投影的分布方差最大。PCA分析，就是要寻找到一组正交基，使样本向量在该正交基上的投影方差最大（相较于其他正交基）。选取正交基的原因在于，此时两个投影方向的协方差为零，各投影方向上的信息不存在冗余。<br>举一个简单的栗子 =w= ：<br><img src="/image/LDA/gauss.png" alt="PCA"><br>在二维空间中的样本点，沿着原始的坐标轴投影，我们发现它的方差（可以粗略的认为即投影在坐标轴上的宽度）并不是最大的，即认为这个一方向上信息量并不是最大的。<br>而如果沿着绿线投影，此时样本方差应该是最大的，信息量也是最丰富的。因此PCA变换就是需要找到类似绿线这样的向量方向，并将原本的样本点投影到这样的正交基上。</p>
 <h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><p>由此，我们发现了PCA变换后的特征，即变换后的各投影方向的协方差为零，换句话说，即变换后样本的协方差矩阵为对角阵。<br>原协方差阵：</p>
 <script type="math/tex; mode=display">S(X)=\frac{1}{n-1} XX^T</script><p>变换后的协方差阵：</p>
 <script type="math/tex; mode=display">S(Y)=\frac{1}{n-1} YY^T</script><p>而其中</p>
